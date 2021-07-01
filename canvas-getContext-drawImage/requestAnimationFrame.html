@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+	<title>requestAnimationFrame</title>
+	<style>
+		canvas {
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+
+	<script>
+		function Sprite(x, y, largura, altura) {
+			this.x = x;
+			this.y = y;
+			this.largura = largura;
+			this.altura = altura;
+
+			this.desenha = function (xCanvas, yCanvas) {
+				ctx.drawImage(img, this.x, this.y, this.largura, this.altura, xCanvas, yCanvas, this.largura, this.altura);
+			}
+		}
+
+		var corona = new Sprite(0, 0, 200, 200);
+		var canvas, ctx, img;
+
+		canvas = document.createElement("canvas");
+		canvas.width = 300;
+		canvas.height = 300;
+		canvas.style.border = "1px solid #000";
+
+		ctx = canvas.getContext("2d");
+		document.body.appendChild(canvas);
+
+		img = new Image();
+		img.src = "https://cdn.pixabay.com/photo/2020/11/01/17/53/coronavirus-5704493_960_720.png";
+
+		function roda() {
+			corona.desenha(0, 0);
+			window.requestAnimationFrame(roda);
+		}
+		roda();
+
+	</script>
+</body>
+
+</html>

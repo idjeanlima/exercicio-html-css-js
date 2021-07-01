@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    //contexto para imagem unica
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const image = new Image(300, 300); //parametro de tamanho da imagem opcional ex: new Image(100, 100);
+    image.onload = desenhar;
+
+    image.src = 'https://cdn.pixabay.com/photo/2020/11/01/17/53/coronavirus-5704493_960_720.png';
+
+    function desenhar() {
+        canvas.width = this.naturalWidth;
+        canvas.height = this.naturalHeight;
+        ctx.drawImage(this, 0, 0, this.width, this.height);
+    }
+</script>
+</body>
+</html>

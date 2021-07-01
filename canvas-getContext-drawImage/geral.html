@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setAttribute, getContext, drawImage</title>
+    <style>
+        canvas {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<script>
+    console.log('Hello World!');
+    var canvas, ctx, formas, corona, lavaMao;
+
+    canvas = document.createElement('canvas'); 
+    canvas.setAttribute('id', 'myCanvas');
+    canvas.width = 410;
+    canvas.height = 380;
+    canvas.style.border = '1px #000 solid';
+    document.body.appendChild(canvas);
+    ctx = canvas.getContext('2d');
+        
+    formas = new Image();
+    formas.src = 'https://cdn.pixabay.com/photo/2020/11/01/17/53/coronavirus-5704493_960_720.png';
+    formas.onload = carregar;
+
+    lavaMao = new Sprite(217, 241, 224, 216);
+    corona = new Sprite(0, 0, 182, 200);
+
+    function carregar() {
+        lavaMao.desenhar(0, 0);
+        corona.desenhar(230, 0);
+
+        ctx.fillStyle = '#ff0000';
+        ctx.fillRect(30, 300, 50, 50);
+        ctx.fillStyle = '#0000ffa5';
+        ctx.fillRect(55, 325, 50, 50);
+
+        ctx.fillStyle = '#0033cca5';
+        ctx.font = '50px serif';
+        ctx.fillText('Hello world', 170, 370, 210);
+    }
+        
+    function Sprite(x, y, largura, altura) {
+        this.x = x;
+        this.y = y;
+        this.largura = largura;
+        this.altura = altura;
+  
+        this.desenhar = function (xCanvas, yCanvas) {
+            ctx.drawImage(formas, this.x, this.y, this.largura, this.altura, xCanvas, yCanvas, this.largura, this.altura);
+        }
+    }
+</script>
+</body>
+</html>
