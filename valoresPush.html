@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMERO NA LISTA</title>
+    <style>
+        body {
+            background: rgba(32, 30, 30, 0.733);
+        }
+
+        section {
+            background: azure;
+            width: 500px;
+            height: 300px;
+            border-radius: 8px;
+        }
+
+        div#div1 {
+            text-align: center;
+        }
+
+        input {
+            width: 50px;
+        }
+
+        select {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="div1">
+            <h2>Numeros na Lista</h2>
+            <label for="num">Número entre 1 e 100: </label>
+            <input type="number" name="num" id="num" min="1" max="100" autofocus>
+            <input type="button" value="Enviar" onclick="enviar()">
+        </div>
+        <br>
+        <div id="div2">
+            <select name="sel" id="sel" size="10">
+            </select>
+            <input type="button" value="Fim" onclick="finalizar()">
+        </div>
+        <p id="result">Resultado: </p>
+    </section>
+
+    <script>
+        var sel = document.getElementById('sel');
+        var result = document.getElementById('result');
+        var valores = [];
+        var total = 0;
+
+        // ao finalizar utilizei .sort com parametros para ordenar os valores no vetor
+        // também declarei a variavel de maior valor do vetor neste momento
+        function finalizar() {
+            valores.sort(function (a, b) {
+                return a - b;
+            });
+            var resultMaior = valores[valores.length-1];
+            document.getElementById('result').innerHTML = ` O menor valor é ${valores[0]}, 
+                o maior valor é ${resultMaior}, a média é ${total/valores.length}`;
+        }
+
+        // principal função, onde é necessario retorno true das funções para sequencia
+        // a função lista(n, l) foi utilizada para impossibilitar repetição de valores
+        // onde n checa se o numero está na lista, indexOf(n) solicita um retorno da posição na lista
+        // em indexOf o retorno -1 indica que o solicitado não consta na lista.
+        function enviar() {
+            var num = Number(document.getElementById('num').value);
+            if (lista(num, valores) && validar(num)) {
+                valores.push(num);
+                document.getElementById('sel').appendChild(document.createElement('option')).textContent = num;
+                total += Number(num);
+            } else {
+                alert('Este valor é invalido ou já está na lista!');
+            }
+        }
+
+        function lista(n, l) {
+            if (l.indexOf(n) == -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function validar(n) {
+            if (n > 0 && n <= 100) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

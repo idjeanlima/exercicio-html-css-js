@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        function bannerGif1() {
+            document.getElementById('imgBanner1').src = "cobra.gif";
+            setTimeout("bannerGif2()", 500);
+            document.getElementById('aId').href = "#";
+            document.querySelector('#paragrafoUnico').innerText = 'Esse algoritimo permite a troca de imagem de forma automatica! I';
+        }
+        function bannerGif2() {
+            document.getElementById('imgBanner1').src = "olho.gif";
+            setTimeout("bannerGif3()", 500);
+            document.getElementById('aId').href = "#";
+            document.querySelector('#paragrafoUnico').innerText = 'Esse algoritimo permite a troca de imagem de forma automatica! II';
+        }
+        function bannerGif3() {
+            document.getElementById('imgBanner1').src = "oculos.gif";
+            setTimeout("bannerGif1()", 500);
+            document.getElementById('aId').href = "#";
+            document.querySelector('#paragrafoUnico').innerText = 'Esse algoritimo permite a troca de imagem de forma automatica! III';
+        }
+        window.onload = function bannerGif1() {
+            document.getElementById('imgBanner1').src = "cobra.gif";
+            setTimeout("bannerGif2()", 500);
+            document.getElementById('aId').href = "#";
+            document.querySelector('#paragrafoUnico').innerText = 'Esse algoritimo permite a troca de imagem de forma automatica! I';
+        }
+    </script>
+    <a id="aId" href=""><img id="imgBanner1" src=""></a>
+    <p id="paragrafoUnico"></p>
+
+</body>
+
+</html>

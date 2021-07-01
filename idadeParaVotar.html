@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual a idade para votar?</title>
+</head>
+<body>
+    <h2>Idade para votar</h2>
+    <form action="">
+        <input type="number" name="idadetxt" id="idadetxt" placeholder="Informe sua idade" min="0" max="135">
+        <input type="button" value="Enviar" onclick="enviarIdade()">
+        <input type="reset" onclick="resetar()">
+    </form>
+    <p id="p1"></p>
+    
+    <script>
+        var idade;
+        function enviarIdade() {
+            idade = Number(document.querySelector('input#idadetxt').value);
+            if (idade < 0) {
+                document.querySelector('p#p1').innerHTML = `${idade} não é um valor válido.`;
+            } else if (idade < 16) {
+                document.querySelector('p#p1').innerHTML = 'Não é permitido votar!';
+            } else if (idade < 19) {
+                document.querySelector('p#p1').innerHTML = 'Voto opcional!';
+            } else if (idade < 71)  {
+                document.querySelector('p#p1').innerHTML = 'Voto obrigatório!';
+            } else {
+                document.querySelector('p#p1').innerHTML = 'Voto opcional!';
+            }
+        }
+        function resetar() {
+            document.querySelector('p#p1').innerHTML = 'Por favor informe a sua idade.';
+        }
+    </script>
+
+</body>
+</html>

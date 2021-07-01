@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAMPEONATO</title>
+</head>
+
+<body>
+
+    <h1>Crie seu campeonato!</h1>
+    <ol>
+        <li>Identificação dos participantes: nome, idade...</li>
+        <li>Quantidade de participantes.</li>
+        <li>Organizar partidas.</li>
+        <li>Criar tabela.</li>
+    </ol>
+
+    <p id="cadastroCampeonato">
+    <h2 id="tituloCampeonato">Cadastro do campeonato:</h2>
+    <input type="text" id="nomeCampeonato" placeholder="nome do campeonato" required>
+    <label for="qtdPessoas" id="labelPessoas">Nº de participantes</label>
+    <select id="qtdPessoas">
+        <option value=2>2</option>
+        <option value=4>4</option>
+        <option value=8>8</option>
+    </select>
+    <input type="button" id="botaoCampeonato" value="Enviar" onclick="enviarCampeonato()">
+    </p>
+
+    <p id="cadastroParticipante">
+    <h2 id="tituloParticipante">Cadastro do participante:</h2>
+    <input type="text" id="nomeParticipante" placeholder="nome" required>
+    <input type="number" id="idadeParticipante" placeholder="idade" required>
+    <input type="button" value="Participante 1" id="botaoParticipante" onclick="enviarParticipante()">
+    </p>
+
+    <p id="teste"></p>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

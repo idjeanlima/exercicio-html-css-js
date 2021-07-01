@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM</title>
+</head>
+
+<body>
+    <p><button onclick="rodar()">Enviar</button></p>
+    <p id="teste"></p>
+    <p id="teste2"></p>
+
+    <script>
+        var qtdPessoas = 60;
+
+        function rodar() {
+            var player = [];
+            document.getElementById('teste').innerText = ``;
+            while (player.length < qtdPessoas) {
+                var numRandom = Math.floor(Math.random() * qtdPessoas);
+                if (lista(numRandom, player)) {
+                    player.push(numRandom);
+                    document.getElementById('teste').innerText += ` ${numRandom + 1} `;
+                }
+            }
+        }
+        function lista(n, l) {
+            if (l.indexOf(n) == -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

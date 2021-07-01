@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+<title></title>
+</head>
+<body>
+<button class="btn111" style="display: none;"></button>
+<a id="aId" href="#"><img id="imgBanner1" src="https://imageshack.com/a/img922/4961/ETkjUm.gif"></a>
+<script type="text/javascript">
+    var iniciar = document.querySelector('.btn111');
+    iniciar.addEventListener('click', bannerGif1());
+function bannerGif1() {
+    document.getElementById('imgBanner1').src = "https://imageshack.com/a/img922/4961/ETkjUm.gif";
+    setTimeout("bannerGif2()", 8000)
+    document.getElementById('aId').href = "#"
+}
+function bannerGif2() {
+    document.getElementById('imgBanner1').src = "https://imageshack.com/a/img924/6599/3dnnnQ.gif";
+    setTimeout("bannerGif1()", 8000)
+    document.getElementById('aId').href = "http://www.camacari.ba.gov.br/cadastro/"
+}
+</script>
+</body>
+</html>

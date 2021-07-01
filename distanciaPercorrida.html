@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>distancia percorrida</title>
+    <style>
+    </style>
+</head>
+<body>
+    <p id="p1">Informe a distancia percorrida (km) no dia 1</p>
+    <p id="p2">Total percorrido: </p>
+    <input type="number" name="km" id="km" placeholder="km">
+    <input type="button" value="Enviar" onclick="clique()" id="env">
+
+    <script>
+        var km = [];
+        var dia = 0, total = 0, controle = 0;
+
+        function clique() {
+            if (dia < 5) {
+                document.querySelector('p#p1').innerText = 'Informe a distancia percorrida (km) no dia ' + (dia+2);
+                km[dia] = Number(document.querySelector('input#km').value);
+                total = total + km[dia];
+                dia += 1;
+                document.querySelector('p#p2').innerText = 'Total percorrido: ' + (total) + 'km';
+                if (dia >= 5) {
+                    document.querySelector('p#p1').innerText = 'Você já informou a distancia para todos os dias.';
+                    document.querySelector('input#env').remove();
+                }
+            }
+            if (dia == 5) {
+                for (controle = 0; controle < 5; controle++) {
+                document.querySelector('p#p3').innerHTML += '<br>Total percorrido dia ' + (controle+1) + ' foi ' + km[controle];
+                dia = 6;
+                }
+            }
+        }
+    </script>
+    <p id="p3"></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Métodos de String JavaScript</h2>
+
+<p>String em matriz</p>
+
+text.split(",") Dividir por vírgulas <br>
+text.split(" ") Dividir por espaço <br>
+text.split("|") Dividir por tubo <br>
+<p>Exibe o primeiro elemento da matriz, após uma divisão da string:</p>
+
+<p id="demo"></p>
+
+<script>
+let text = "a,b,c,d,e,f";
+const myArray = text.split(",");
+document.getElementById("demo").innerHTML = myArray[0];
+</script>
+
+<p>Se o separador for omitido, a matriz retornada conterá toda a string no índice [0].</p>
+<p>Se o separador for "", a matriz retornada será uma matriz de caracteres únicos:</p>
+
+</body>
+</html>
+
+

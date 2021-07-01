@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        #corpo,
+        .conteudo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conteudo {
+            width: 1200px;
+            height: 700px;
+        }
+
+        .btn:hover {
+            background: #0066ff;
+            transition: 400ms;
+        }
+
+        .btn, #demo {
+            background: #0099ff;
+            color: white;
+            border-radius: 30px;
+            width: max-content;
+            padding: 10px 24px 10px 24px;
+            margin: 10px;
+            font-family: sans-serif;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px #0033ff;
+            text-decoration: none;
+            box-shadow: 2px 2px 8px #0033ffb0;
+        }
+
+        @media only screen and (min-width: 1450px) {
+            .btn {
+                font-size: 140px;
+            }
+        }
+        @media only screen and (max-width: 1449px) and (min-width: 1100px) {
+            .btn {
+                font-size: 100px;
+            }
+        }
+        @media only screen and (max-width: 1099px) and (min-width: 650px) {
+            .btn {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body onload="setTimeout('remover()', '4000')">
+    <div id="corpo">
+        <div class="conteudo">
+            <a class="btn" href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript" target="_blank"
+                rel="noopener noreferrer">
+                MDN
+            </a>
+            <a class="btn" href="https://www.w3schools.com/js/js_string_methods.asp" target="_blank"
+                rel="noopener noreferrer">
+                W3SCHOOLS
+            </a>
+        </div>
+    </div>
+    <p id="demo"></p>
+    <script>
+        document.querySelector("#demo").innerHTML = "Tamanho da tela: " + window.innerWidth;
+        document.body.onresize = function () {
+            if (x != window.innerWidth) {
+                document.querySelector("#demo").style.display = "flex"; 
+                var x = document.querySelector("#demo").innerHTML = "Tamanho da tela: " + window.innerWidth;
+                setTimeout("remover()", 3000);
+            }
+        };
+        function remover() {
+            document.querySelector("#demo").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

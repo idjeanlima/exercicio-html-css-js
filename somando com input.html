@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somando com input</title>
+    <style>
+        * {font: 18px 'Corbel';}
+        input {
+            width: 85px;
+        }
+        div{ 
+            margin: 7px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" name="num1" id="num1" placeholder="numero1"> +
+    <input type="number" name="num2" id="num2" placeholder="numero2">
+    <div id="div1">Resultado: </div>
+    <input type="button" value="somar" onclick="somar()"> <!--botão com atributo chamando a função-->
+    <script>
+        function somar() {
+            var num1 = Number(document.querySelector('input#num1').value);
+            var num2 = Number(document.querySelector('input#num2').value);
+            var div1 = document.querySelector('div#div1');
+            div1.innerText = 'Resultado: ' + (num1 + num2);
+        }
+    </script>
+
+    <p>Neste exercício foi trabalhado algumas características, <br> 
+        dando ênfase a Função e Input (com armazenamento do valor). <br><br>
+        Na linha 24 declaramos a variável num1, convertendo para número <br>
+        e recebendo o valor (.value) da entrada (input).
+    </p>
+
+</body>
+</html>
