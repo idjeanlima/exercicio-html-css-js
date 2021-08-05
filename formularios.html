@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <center>
+   <form action="" name="cadastro">
+       <table border="0" cellspacing="2" cellpadding="2"><caption align="top"><pre>Por favor preencha o nosso formulário de cadastro.</pre></caption>
+           <tr>
+               <td>Nome:</td>
+               <td><input type="text" size="20" maxlength="25" name="nome" required autofocus></td> 
+               <td>Nascimento:</td>
+               <td><input type="date" size="15" name="nascimento"></td>
+           </tr>
+           <tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" size="20" maxlength="40" name="email" placeholder="exemplo@provedor.com"></td>
+                <td>Telefone:</td>
+                <td><input type="tel" size="15" maxlength="20" name="telefone" pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}" title="Por favor insira um número válido." placeholder="(99)99999-9999"></td>
+            </tr>
+            <tr>
+                <td>Endereço:</td>
+                <td><input type="" size="10" maxlength="15" name="endereco"> Nº: <input type="text" size="1" maxlength="3" name="numdacasa"></td>
+                <td>Bairro:</td>
+                <td><input type="" size="15" maxlength="15" name="bairro"></td>
+            </tr>
+            <tr>
+                <td>Sua torcida:</td>
+                <td colspan="3"><select name="torcida">
+                    <option value="bahia">Bahia</option>
+                    <option value="vitoria">Vitória</option>
+                    <option value="outro">Outro</option>
+                    <option value="nenhum">Nenhum</option>
+                    </select>
+                Ativar notificações: Sim <input type="radio" name="notificacoes" value="sim"> Não <input type="radio" name="notificacoes" value="nao">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" align="left"><input type="submit"><input type="reset"></td>
+            </tr>
+       </table>
+   </form>
+    
+   
+
+</body>
+</html>

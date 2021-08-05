@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displayFlex</title>
+    <style>
+        .conteiner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(247,247,247);
+            width: 900px;
+            height: 325px;
+        }
+        .hor, .ver {
+            width: 256px;
+            border: 1.2px solid rgb(77,150,220);
+            background-color: rgb(162,203,250);
+            border-radius: 2%;
+            margin: 16px;
+        }
+        .hor {
+            height: 85px;
+        }
+        .ver, .linhaV {
+            height: 293px;
+        }
+        .linhaV {
+            border-left: 2px solid rgb(221,221,221);
+        }
+    </style>
+</head>
+<body>
+    
+<div class="conteiner">
+
+    <div>
+        <div class="hor"></div>
+        <div class="hor"></div>
+        <div class="hor"></div>
+    </div>
+    
+    <div class="linhaV"></div>
+    <div class="ver"></div>
+    <div class="linhaV"></div>
+    
+    <div>
+        <div class="hor"></div>
+        <div class="hor"></div>
+        <div class="hor"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
