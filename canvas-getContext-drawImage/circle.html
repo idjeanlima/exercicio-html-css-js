@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="160" height="160" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas"); //variável de controle do elemento
+var ctx = c.getContext("2d"); //variavel de controle transformando c em contexto 2d
+ctx.fillStyle = "#4b83f9"; //cor
+ctx.fillRect(0, 0, 160, 160);
+
+// código do circulo para delimitar espaço reservado para uso
+//ctx.beginPath(); //verificar do que se trata
+//ctx.arc(80, 80, 80, 0, 2 * Math.PI); //arco onde x, y, raio, inicio, circuferencia
+//ctx.stroke(); //verificar
+
+ctx.fillStyle = '#ff0000'; //define cor dos proximos itens no contexto
+ctx.fillRect(25, 25, 60, 60); //define um retangulo x(horizontal), y(vertical), largura, altura
+ctx.fillStyle = '#0000ff';
+ctx.fillRect(65, 65, 60, 60);
+
+ctx.font = '80px serif';
+ctx.fillStyle = "white";
+ctx.fillText('ARMZN', 5, 100, 150);
+</script> 
+
+</body>
+</html>
